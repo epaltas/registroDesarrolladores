@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header') %>
+    <title>Edit Developer</title>
+</head>
+
+<body>
+    <%- include('partials/navigation') %>
+
+    <div class="container p-4 text-center">
+        <h3>Editar Datos</h1>
+    </div>
+    <div class="container p-4">
+        <form method="POST" action="/edit/<%= developers.id %>" class="card card-body">
+            <div class="form group">
+                <strong><label for="name">Nombres Completos</label></strong>
+                <input type="text" class="form-control" name="nombres_completos" id="nombres_completos"
+                value="<%= developers.nombres_completos %>">
+            </div>
+            <br>
+            <div class="form group">
+                <strong><label for="linkgithub">Link GitHub</label></strong>
+                <input type="text" class="form-control" name="link_github" id="link_github"
+                    value="<%= developers.link_github %>">
+            </div>
+            <br>
+            <div class="form group">
+                <strong><label for="technologies">Tecnologías</label></strong>
+                <textarea type="text" class="form-control" name="tecnologias_conocidas" id="tecnologias_conocidas"
+                    rows="5" class="form-control" value="<%= developers.tecnologias_conocidas %>"></textarea>
+            </div>
+            <br>
+            <input type="submit" value="Guardar" class="btn btn-primary btn-block">
+        </form>
+    </div>
+</body>
+
+</html>
